@@ -31,7 +31,7 @@ CineVerso é uma plataforma moderna de streaming de filmes e séries desenvolvid
 Este projeto é de código aberto e foi criado para compartilhar conhecimento e ideias com a comunidade de desenvolvedores. Sinta-se à vontade para usar, modificar e contribuir com o projeto.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/nevxzzz/cine-verso/main/public/screenshot.png" alt="CineVerso Screenshot" width="80%" />
+  <img src="https://raw.githubusercontent.com/nevxzzz/cine-verso/main/screen.png" alt="CineVerso Screenshot" width="80%" />
 </div>
 
 
