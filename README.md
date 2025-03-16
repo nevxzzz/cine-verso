@@ -136,22 +136,17 @@ Para instalar e executar o CineVerso localmente, siga os passos abaixo:
 Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis:
 
 ```env
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=sua_api_key_do_firebase
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=seu_auth_domain.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=seu_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=seu_storage_bucket.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=seu_messaging_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=seu_app_id
+# Firebase Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 
-# TMDB API
-NEXT_PUBLIC_TMDB_API_KEY=sua_api_key_do_tmdb
-NEXT_PUBLIC_TMDB_API_URL=https://api.themoviedb.org/3
-NEXT_PUBLIC_TMDB_IMAGE_URL=https://image.tmdb.org/t/p
-
-# Streaming API (opcional)
-NEXT_PUBLIC_WAREZ_CDN_API_URL=url_da_api_de_streaming
-NEXT_PUBLIC_WAREZ_CDN_API_KEY=sua_api_key_de_streaming
+# TMDB API (The Movie Database)
+NEXT_PUBLIC_IMDB_API_KEY=your_tmdb_api_key
+IMDB_API_KEY=your_tmdb_api_key
 ```
 
 ### Firebase
