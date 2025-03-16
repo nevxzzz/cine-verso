@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/nevxzzz/cine-verso/main/public/logo.png" alt="CineVerso Logo" width="200" height="auto" />
   <h1>CineVerso</h1>
-  <p>Sua plataforma de streaming de filmes e séries</p>
+  <p>Um site de filmes e séries 👾</p>
   
   <p>
     <a href="#visão-geral">Visão Geral</a> •
@@ -35,9 +34,6 @@ Este projeto é de código aberto e foi criado para compartilhar conhecimento e 
   <img src="https://raw.githubusercontent.com/nevxzzz/cine-verso/main/public/screenshot.png" alt="CineVerso Screenshot" width="80%" />
 </div>
 
-## Demonstração
-
-Você pode acessar uma demonstração do CineVerso em: [https://cine-verso.vercel.app](https://cine-verso.vercel.app)
 
 ## Tecnologias
 
@@ -172,3 +168,64 @@ NEXT_PUBLIC_WAREZ_CDN_API_KEY=sua_api_key_de_streaming
 3. Adicione a chave ao arquivo `.env.local`.
 
 ## Estrutura do Projeto
+
+```
+cineverse/
+├── components/ # Componentes React reutilizáveis
+│ ├── home/ # Componentes específicos da página inicial
+│ ├── layout/ # Componentes de layout (Header, Footer, etc.)
+│ ├── profile/ # Componentes relacionados ao perfil do usuário
+│ ├── search/ # Componentes de busca
+│ ├── title/ # Componentes para páginas de detalhes de títulos
+│ ├── auth/ # Componentes de autenticação
+│ └── ui/ # Componentes de UI genéricos
+├── lib/ # Funções utilitárias e hooks
+│ ├── hooks/ # React hooks personalizados
+│ ├── services/ # Serviços de API
+│ └── utils/ # Funções utilitárias
+├── pages/ # Páginas da aplicação (roteamento Next.js)
+│ ├── api/ # Rotas de API
+│ ├── auth/ # Páginas de autenticação
+│ ├── genre/ # Páginas de gêneros
+│ ├── profile/ # Páginas de perfil
+│ ├── search/ # Página de busca
+│ ├── movie/ # Páginas de detalhes de filmes
+│ └── series/ # Páginas de detalhes de séries
+├── public/ # Arquivos estáticos
+│ └── images/ # Imagens
+├── styles/ # Estilos globais
+├── types/ # Definições de tipos TypeScript
+└── hooks/ # Hooks personalizados globais
+```
+
+## Uso
+
+Após a instalação e configuração, você pode usar o CineVerso para:
+
+- Navegar por filmes e séries populares
+- Buscar por títulos específicos
+- Criar uma conta e fazer login
+- Adicionar filmes e séries aos favoritos
+- Criar uma lista de "Quero Assistir"
+- Assistir filmes e episódios de séries
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você deseja contribuir com o projeto, siga os passos abaixo:
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`)
+4. Faça push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ por <a href="https://github.com/nevxzzz">Nevxzzz</a></p>
+  <p>Compartilhe ideias, não as guarde para si!</p>
+</div>
