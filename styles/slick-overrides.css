@@ -1,0 +1,99 @@
+/* Sobrescrever estilos do Slick Carousel */
+
+/* Remover botões de navegação padrão do Slick */
+.slick-arrow,
+.slick-prev,
+.slick-next,
+button.slick-arrow,
+button.slick-prev,
+button.slick-next,
+[type="button"].slick-arrow,
+[type="button"].slick-prev,
+[type="button"].slick-next,
+[data-role="none"].slick-arrow,
+[data-role="none"].slick-prev,
+[data-role="none"].slick-next,
+button[type="button"][data-role="none"],
+button[type="button"].slick-arrow,
+button[type="button"].slick-prev,
+button[type="button"].slick-next,
+button[data-role="none"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  border: none !important;
+  background: none !important;
+  font-size: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  transform: scale(0) !important;
+}
+
+/* Remover texto dos botões de navegação */
+.slick-prev::before,
+.slick-next::before,
+.slick-prev::after,
+.slick-next::after,
+button.slick-prev::before,
+button.slick-next::before,
+button.slick-prev::after,
+button.slick-next::after,
+[type="button"].slick-prev::before,
+[type="button"].slick-next::before,
+[type="button"].slick-prev::after,
+[type="button"].slick-next::after,
+button[type="button"].slick-prev::before,
+button[type="button"].slick-next::before,
+button[type="button"].slick-prev::after,
+button[type="button"].slick-next::after {
+  display: none !important;
+  content: "" !important;
+  font-size: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  text-indent: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Remover botões de navegação em qualquer componente que use Slick */
+[data-role="none"],
+button[data-role="none"],
+button[type="button"][data-role="none"],
+button[type="button"].slick-arrow,
+button[type="button"].slick-prev,
+button[type="button"].slick-next {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  transform: scale(0) !important;
+} 

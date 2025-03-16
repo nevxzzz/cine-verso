@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animações personalizadas */
+@keyframes subtleFadeIn {
+  from {
+    opacity: 0.85;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.85;
+    transform: translateY(3px);
+  }
+}
+
+.animate-subtleFadeIn {
+  animation: subtleFadeIn 0.2s ease-out forwards;
+}
+
+.animate-subtleFadeOut {
+  animation: subtleFadeOut 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+:root {
+  --color-primary: #e50914;
+  --color-primary-dark: #b81d24;
+  --color-accent: #ffbe0b;
+  --color-background: #141414;
+  --color-background-alt: #1f1f1f;
+  --color-text: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-alt: 'Roboto', sans-serif;
+}
+
+body {
+  @apply bg-background text-white font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos para botões */
+.btn-primary {
+  @apply bg-primary text-white font-medium py-2 px-6 rounded-md transition-all duration-200;
+}
+
+.btn-primary:hover {
+  @apply bg-opacity-60;
+}
+
+.btn-secondary {
+  @apply bg-background-alt text-white font-medium py-2 px-6 rounded-md transition-all duration-200;
+}
+
+.btn-secondary:hover {
+  @apply bg-opacity-60;
+}
+
+.btn-outline {
+  @apply border border-white text-white font-medium py-2 px-6 rounded-md transition-all duration-200;
+}
+
+.btn-outline:hover {
+  @apply bg-white bg-opacity-20;
+}
+
+/* Estilos para links de navegação */
+.nav-link {
+  @apply text-gray-300 hover:text-white transition-colors duration-200;
+}
+
+/* Estilos para o menu hambúrguer mobile */
+.mobile-menu-button span {
+  transform-origin: center;
+  position: absolute;
+}
+
+.mobile-menu-button span:nth-child(1) {
+  transform: translateY(-8px);
+}
+
+.mobile-menu-button span:nth-child(4) {
+  transform: translateY(8px);
+}
+
+.mobile-menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-menu-container {
+  @apply fixed inset-0 z-40 bg-background/95 backdrop-blur-sm;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-content {
+  @apply flex flex-col h-full;
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação para os itens do menu */
+.menu-item-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.menu-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-item-exit-active {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Estilos para campos de formulário */
+.input-field {
+  @apply bg-background-alt text-white rounded-md px-4 py-2 focus:outline-none focus:ring-1 focus:ring-primary;
+}
+
+/* Estilos para cards de filmes */
+.movie-card {
+  @apply relative rounded-lg overflow-hidden transition-transform duration-300;
+}
+
+.movie-card-hover {
+  @apply transition-all duration-300;
+}
+
+.movie-card-hover:hover {
+  @apply transform scale-105 shadow-xl;
+}
+
+/* Estilos para o carrossel */
+.hero-carousel .slick-slide {
+  @apply outline-none;
+}
+
+.hero-carousel .slick-dots {
+  @apply bottom-6;
+}
+
+.hero-carousel .slick-dots li button:before {
+  @apply text-gray-700;
+}
+
+.hero-carousel .slick-dots li.slick-active button:before {
+  @apply text-primary;
+}
+
+/* Remover botões de navegação padrão do Slick */
+button.slick-arrow,
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next,
+.slick-prev,
+.slick-next {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  border: none !important;
+  background: none !important;
+  font-size: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remover texto dos botões de navegação */
+.slick-arrow.slick-prev::before,
+.slick-arrow.slick-next::before,
+.slick-arrow.slick-prev::after,
+.slick-arrow.slick-next::after,
+.slick-prev::before,
+.slick-next::before,
+.slick-prev::after,
+.slick-next::after {
+  display: none !important;
+  content: "" !important;
+  font-size: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  text-indent: -9999px !important;
+}
+
+/* Remover botões de navegação em qualquer componente que use Slick */
+[data-role="none"].slick-arrow,
+button[data-role="none"],
+button[type="button"][data-role="none"],
+button[type="button"][class*="slick-"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Classe específica para esconder botões do Slick */
+.hide-slick-buttons .slick-arrow,
+.hide-slick-buttons .slick-prev,
+.hide-slick-buttons .slick-next,
+.hide-slick-buttons button.slick-arrow,
+.hide-slick-buttons button.slick-prev,
+.hide-slick-buttons button.slick-next,
+.hide-slick-buttons [data-role="none"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  border: none !important;
+  background: none !important;
+  font-size: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Classe adicional para garantir que os botões não apareçam */
+.no-slick-arrows button[type="button"],
+.no-slick-arrows button[data-role="none"],
+.no-slick-arrows .slick-arrow,
+.no-slick-arrows .slick-prev,
+.no-slick-arrows .slick-next {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  border: none !important;
+  background: none !important;
+  font-size: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  transform: scale(0) !important;
+}
+
+/* Estilos personalizados para transição mais suave do carrossel principal */
+.hero-slider .slick-slide {
+  opacity: 0.3;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  transform: scale(0.95);
+}
+
+.hero-slider .slick-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-slider .slick-track {
+  transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1.0) !important;
+}
+
+/* Estilos para transição manual mais rápida */
+.hero-slider.manual-transition .slick-slide {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.hero-slider.manual-transition .slick-track {
+  transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1.0) !important;
+}
+
+/* Estilos para transição de volta ao início mais suave */
+.hero-slider.loop-transition .slick-slide {
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.hero-slider.loop-transition .slick-track {
+  transition: transform 2s cubic-bezier(0.25, 0.1, 0.25, 1.0) !important;
+}
+
+/* Estilos para títulos de seção */
+.section-title {
+  @apply text-2xl md:text-3xl font-bold mb-6;
+}
+
+/* Estilos para gradientes */
+.gradient-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent;
+}
+
+/* Estilos para scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-alt;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Estilos para paginação */
+.pagination {
+  @apply flex justify-center items-center space-x-2 mt-8;
+}
+
+.pagination-item {
+  @apply w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-200;
+}
+
+.pagination-item.active {
+  @apply bg-primary text-white;
+}
+
+.pagination-item:not(.active) {
+  @apply bg-background-alt text-gray-300 hover:bg-gray-800;
+}
+
+/* Estilos para tags */
+.tag {
+  @apply inline-block bg-background-alt text-gray-300 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-gray-800 transition-colors duration-200;
+}
+
+/* Estilos para ratings */
+.rating {
+  @apply flex items-center;
+}
+
+.rating-star {
+  @apply text-yellow-500;
+}
+
+/* Estilos para tooltips */
+.tooltip {
+  @apply relative inline-block;
+}
+
+.tooltip-text {
+  @apply absolute z-10 invisible bg-background-alt text-white text-center py-2 px-4 rounded-md opacity-0 transition-opacity duration-300 w-max;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover .tooltip-text {
+  @apply visible opacity-100;
+}
+
+/* Estilos para notificações */
+.notification-badge {
+  @apply absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full;
+}
+
+/* Estilos para modais */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center;
+}
+
+.modal-content {
+  @apply bg-background-alt rounded-lg shadow-xl max-w-lg w-full mx-4 animate-slideUp;
+}
+
+.modal-header {
+  @apply flex justify-between items-center p-4 border-b border-gray-700;
+}
+
+.modal-body {
+  @apply p-6;
+}
+
+.modal-footer {
+  @apply flex justify-end p-4 border-t border-gray-700 space-x-4;
+}
+
+/* Remover estes estilos */
+/* Estilos para o carrossel de filmes */
+.movie-row-slider .slick-track,
+.movie-row-slider .slick-slide,
+.movie-row-slider,
+.movie-row-slider .slick-dots,
+.movie-row-slider .slick-prev,
+.movie-row-slider .slick-next,
+.movie-row-slider .slick-prev:before,
+.movie-row-slider .slick-next:before {
+  display: none;
+}
+
+/* Estilos para botões de categoria */
+.category-button {
+  @apply transition-all duration-200;
+}
+
+.category-button:not(.active):hover {
+  @apply bg-opacity-60;
+}
+
+/* Esconder scrollbar mantendo funcionalidade */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  scroll-behavior: smooth;
+}
+
+.movie-row-container {
+  transition-duration: 850ms !important;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0) !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+/* Aplicação de fontes personalizadas */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+body, p, span, button, input, select, textarea {
+  font-family: var(--font-body);
+}
+
+.movie-title, .series-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.movie-info, .series-info {
+  font-family: var(--font-alt);
+}
+
+/* Classes utilitárias para fontes */
+.font-heading {
+  font-family: var(--font-heading) !important;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
+}
+
+.font-alt {
+  font-family: var(--font-alt) !important;
+}
+
+.text-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.text-subtitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: var(--font-alt);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+/* Animações para o menu mobile */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Animações para o modal de login */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out forwards;
+} 
